@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #e8f4f8;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.WyszukiwarkaLotowController">
+   <children>
+      <ImageView fx:id="airplane_picture" fitHeight="54.0" fitWidth="99.0" layoutX="585.0" layoutY="20.0" onMouseClicked="#action_go_to_app_stage" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../airplane.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="Btn_go_" layoutX="554.0" layoutY="443.0" mnemonicParsing="false" onAction="#action_go_to_search_stage" prefHeight="25.0" prefWidth="124.0" style="-fx-background-color: #add8e6;" text="wyszukaj połączeń">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="Btn_exit" layoutX="21.0" layoutY="443.0" mnemonicParsing="false" onAction="#action_exit_application" prefHeight="25.0" prefWidth="124.0" style="-fx-background-color: #add8e6;" text="powrót" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Label fx:id="Label1" layoutX="29.0" layoutY="14.0" prefHeight="30.0" prefWidth="538.0" text="Wyszukiwarka dla pracownika i pasażera" textFill="#30a9ce">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TabPane layoutX="29.0" layoutY="93.0" prefHeight="331.0" prefWidth="648.0" style="-fx-background-color: #add8e6;" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="tab_pracownik" text="pracownik">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="231.0" prefWidth="662.0">
+                     <children>
+                        <MenuButton fx:id="Btn_pracownik" layoutX="14.0" layoutY="27.0" mnemonicParsing="false" onAction="#Btn_pracownik_action" text="wyświetl informacje">
+                          <items>
+                            <MenuItem mnemonicParsing="false" onAction="#Pracownik_wyszukaj_pracownika" text="wyszukaj pracownika wg. nazwiska" />
+                            <MenuItem mnemonicParsing="false" onAction="#Pracownik_wyszukaj_prac_wg_stanowiska" text="wyszukaj pracowników wg. stanowiska" />
+                              <MenuItem mnemonicParsing="false" onAction="#Pracownik_wyszukaj_prac_wg_daty_zatr" text="wyszukaj prac. od daty zatrudnienia" />
+                          </items>
+                        </MenuButton>
+                        <TextArea fx:id="text1" layoutX="14.0" layoutY="65.0" prefHeight="226.0" prefWidth="622.0" />
+                        <TextField fx:id="Text2_pracownik" layoutX="177.0" layoutY="27.0" onAction="#Text2_pracownik_action" />
+                        <Button fx:id="Btn2_pracownik" layoutX="373.0" layoutY="27.0" mnemonicParsing="false" onAction="#Btn2_pracownik_action" text="OK" />
+                        <DatePicker fx:id="Data2_pracownik" layoutX="177.0" layoutY="27.0" onAction="#Data2_pracownik_action" promptText="wybierz datę" />
+                        <Label fx:id="Label2_pracownik" layoutX="177.0" layoutY="6.0" text="nazwisko:" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="tab_pasazer" text="pasażer">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="312.0" prefWidth="614.0">
+                     <children>
+                        <MenuButton fx:id="Btn_wybierz2" layoutX="14.0" layoutY="27.0" mnemonicParsing="false" onAction="#Btn_wybierz2_action" prefHeight="25.0" prefWidth="81.0" text="wybierz">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#Pasazer_wyszukaj_lotnisk_action" text="wyszukaj lotnisk" />
+                              <MenuItem mnemonicParsing="false" onAction="#Pasazer_wyszukaj_lotu_action" text="wyszukaj lotu" />
+                              <MenuItem mnemonicParsing="false" onAction="#Pasazer_wyszukaj_przywilejow_action" text="wyszukacj przywilejow" />
+                           </items>
+                        </MenuButton>
+                        <TextArea fx:id="text2" layoutX="13.0" layoutY="67.0" prefHeight="211.0" prefWidth="622.0" />
+                        <DatePicker fx:id="Data2_pasazer" layoutX="131.0" layoutY="27.0" onAction="#Data2_pasazer_action" promptText="wybierz datę" />
+                        <Button fx:id="Btn2_pasazer" layoutX="526.0" layoutY="27.0" mnemonicParsing="false" onAction="#Btn2_pasazer_action" text="OK" />
+                        <Label fx:id="Label2_pasazer" layoutX="135.0" layoutY="6.0" text="nazwa państwa:" />
+                        <TextField fx:id="Text2_pasazer" layoutX="131.0" layoutY="27.0" />
+                        <Label fx:id="Label22_pasazer" layoutX="332.0" layoutY="6.0" text="Label" />
+                        <DatePicker fx:id="Data22_pasazer" layoutX="332.0" layoutY="27.0" promptText="wybierz datę" />
+                        <Label fx:id="Label_222_pasazer" layoutX="134.0" layoutY="31.0" prefHeight="17.0" prefWidth="348.0" text="Label" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <Label fx:id="Label2" alignment="TOP_LEFT" layoutX="29.0" layoutY="47.0" prefHeight="38.0" prefWidth="538.0" text="Wyszukiwarka dla pracownika" textFill="#30a9ce" wrapText="true" />
+   </children>
+</AnchorPane>
